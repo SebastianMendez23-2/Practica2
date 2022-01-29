@@ -1,0 +1,31 @@
+import 'dart:io';
+
+void main() {
+  double IMC = 0;
+  print("Ingresa el peso");
+  String NumeroCon = stdin.readLineSync() ?? '0';
+  int peso = int.parse(NumeroCon);
+
+  print("Ingresa la altura");
+  String NumeroCon1 = stdin.readLineSync() ?? '0';
+  int altura = int.parse(NumeroCon1);
+  double cenM = altura / 100;
+  IMC = (peso / (cenM * cenM));
+
+  if (IMC < 18.50) {
+    print("Tiene peso Ligero");
+  }
+
+  if (IMC >= 18.50 && IMC < 24.99) {
+    print("Su peso es Normal");
+  }
+
+  if (IMC >= 25.0 && IMC < 29.99) {
+    print("Esta un poco pasa de su peso normal");
+  }
+
+  if (IMC > 30.0) {
+    print("ALERTA SOBREPESO");
+  }
+  print("Su IMC es $IMC");
+}

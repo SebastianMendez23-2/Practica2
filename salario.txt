@@ -1,0 +1,39 @@
+import 'dart:io';
+
+void main() {
+  int xHora = 120;
+  int extraHoras = 175;
+  int salario = 0;
+  int ActaAdministrativa= 0;
+  int i = 0;
+  print("Ingrese el nombre del empleado");
+  var Empleado = stdin.readLineSync();
+
+  while (i < 5) {
+    i = i + 1;
+    print("Ingresar horas que trabajo el empleado : $Empleado : ");
+    String EmpleadoSTRING = stdin.readLineSync() ?? '0';
+    int Horas = int.parse(EmpleadoSTRING);
+    if (Horas >= 27 && Horas < 41) {
+      salario = xHora * Horas;
+      print(
+          "El empleado : $Empleado Trabajo $Horas Horas , Su salario correspondiente es :$salario ");
+    } else if (Horas > 40) {
+      salario = xHora * 40;
+      int Sacarextra = Horas - 40;
+      int extras = Sacarextra * extraHoras;
+      salario = salario + extras;
+      print(
+          "El empleado : $Empleado Trabajo $Horas Horas , Su salario correspondiente es :$salario ");
+    } else if (Horas < 27) {
+      ActaAdministrativa = ActaAdministrativa + 1;
+      print(
+          "El empleado : $Empleado Trabajo $Horas Horas , No Puede levantar Acta Adminstrativa");
+    }
+    if (ActaAdministrativa >= 2) {
+      print(
+          "Estimado empleado : $Empleado Lamentablemente esta Despedido.");
+      break;
+    }
+  }
+}
