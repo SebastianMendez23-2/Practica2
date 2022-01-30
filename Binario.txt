@@ -1,8 +1,8 @@
 void main() {
   int valorDec = 36; //valor decimal
 
-  int valorBin = 0;
-
+  int valorBin = 0;  //valor Binario
+ 
   int i = 1;
 
   while (valorDec > 0) {
